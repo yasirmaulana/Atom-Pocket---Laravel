@@ -14,14 +14,14 @@ class DompetMasukController extends Controller
     // Method menampilkan data transaksi masuk dan filter
     public function index(Request $request)
     {
-        // $inTransactions = Transaction::where('status_id', 1)->get();
         $inTransactions = DB::table('transactions')
             ->join('wallets', 'transactions.dompet_id', '=', 'wallets.id')
             ->join('categories', 'transactions.kategori_id', '=', 'categories.id')
             ->select('transactions.*', 'wallets.nama as dompet', 'categories.nama as kategori')
+            ->where('transactions.status_id', 1)
             ->get();
 
-        return view('layouts.transaksi.index', [
+        return view('layouts.transaksi.indexintrx', [
             'data' => $inTransactions
         ]);
     }

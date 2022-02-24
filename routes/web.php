@@ -41,7 +41,8 @@ Route::get('/dompetmasuk', [DompetMasukController::class, 'index']);
 Route::get('/dompetmasuk/create', [DompetMasukController::class, 'create']);
 Route::post('/dompetmasuk', [DompetMasukController::class, 'store']);
 
-
 Route::get('/dompetkeluar', [DompetKeluarController::class, 'index']);
+Route::get('/dompetkeluar/create', [DompetKeluarController::class, 'create']);
+Route::post('/dompetkeluar', [DompetKeluarController::class, 'store']);
 
 Route::get('/laporan', [LaporanController::class, 'index']);
