@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DompetRequest;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,7 @@ class DompetController extends Controller
     }
 
     // Method menyimpan tambah data dompet
-    public function store(Request $request)
+    public function store(DompetRequest $request)
     {
         Wallet::create([
             'nama' => $request->namadompet,
@@ -79,7 +80,7 @@ class DompetController extends Controller
     }
 
     // Method mengubah data dompet
-    public function update(Request $request, $id)
+    public function update(DompetRequest $request, $id)
     {
         $wallet = Wallet::find($id);
 
