@@ -46,3 +46,4 @@ Route::get('/dompetkeluar/create', [DompetKeluarController::class, 'create']);
 Route::post('/dompetkeluar', [DompetKeluarController::class, 'store']);
 
 Route::get('/laporan', [LaporanController::class, 'index']);
+Route::post('/laporan', [LaporanController::class, 'laporan']);
