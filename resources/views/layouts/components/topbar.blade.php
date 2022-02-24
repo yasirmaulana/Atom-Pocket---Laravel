@@ -4,7 +4,7 @@
 
         <ul class="navbar-item theme-brand flex-row  text-center">
             <li class="nav-item theme-text">
-                <a href="index-2.html" class="nav-link"> Atom Pocket </a>
+                <a href="{{ url('/') }}" class="nav-link"> Atom Pocket </a>
             </li>
         </ul>
     </header>

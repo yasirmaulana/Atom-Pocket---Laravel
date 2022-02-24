@@ -28,7 +28,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="master" data-parent="#accordionExample">
                     <li class="nonactive">
-                        <a href="#"> Dompet </a>
+                        <a href="{{ url('/dompet') }}"> Dompet </a>
                     </li>
                     <li>
                         <a href="#"> Kategori </a>

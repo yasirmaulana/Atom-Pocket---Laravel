@@ -23,6 +23,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/dompet', [DompetController::class, 'index']);
 
+
 Route::get('/kategori', [KategoriController::class, 'index']);
 
 Route::get('/dompetmasuk', [DompetMasukController::class, 'index']);
