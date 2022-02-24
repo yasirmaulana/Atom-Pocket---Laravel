@@ -30,6 +30,12 @@ Route::patch('/dompet/{id}', [DompetController::class, 'update']);
 Route::patch('/dompet/{id}/{kode}', [DompetController::class, 'setstatus']);
 
 Route::get('/kategori', [KategoriController::class, 'index']);
+Route::get('/kategori/create', [KategoriController::class, 'create']);
+Route::post('/kategori', [KategoriController::class, 'store']);
+Route::get('/kategori/{id}', [KategoriController::class, 'show']);
+Route::get('/kategori/{id}/edit', [KategoriController::class, 'edit']);
+Route::patch('/kategori/{id}', [KategoriController::class, 'update']);
+Route::patch('/kategori/{id}/{kode}', [KategoriController::class, 'setstatus']);
 
 Route::get('/dompetmasuk', [DompetMasukController::class, 'index']);
 

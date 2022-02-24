@@ -31,7 +31,7 @@
                         <a href="{{ url('/dompet') }}"> Dompet </a>
                     </li>
                     <li>
-                        <a href="#"> Kategori </a>
+                        <a href="{{ url('/kategori') }}"> Kategori </a>
                     </li>
                 </ul>
             </li>
@@ -58,10 +58,10 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="transaksi" data-parent="#accordionExample">
                     <li>
-                        <a href="#"> Dompet Masuk </a>
+                        <a href="{{ url('/dompetmasuk') }}"> Dompet Masuk </a>
                     </li>
                     <li>
-                        <a href="#"> Dompet Keluar </a>
+                        <a href="{{ url('/dompetkeluar') }}"> Dompet Keluar </a>
                     </li>
                 </ul>
             </li>
@@ -88,7 +88,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="laporan" data-parent="#accordionExample">
                     <li>
-                        <a href="#"> Laporan Transaksi </a>
+                        <a href="{{ url('laporan') }}"> Laporan Transaksi </a>
                     </li>
                 </ul>
             </li>
