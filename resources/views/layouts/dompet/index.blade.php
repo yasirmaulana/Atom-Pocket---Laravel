@@ -2,7 +2,7 @@
 
 @section('main')
     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-        <a href="#" type="button" class="btn btn-primary">Buat Baru</a>
+        <a href="{{ url('dompet/create') }}" type="button" class="btn btn-primary">Buat Baru</a>
         <a href="{{ url('dompet') }}" type="button" class="btn btn-secondary">Semua ({{ $jmlDompet }})</a>
         <a href="{{ url('dompet?status=1') }}" type="button" class="btn btn-secondary">Aktif ({{ $jmlDompetAktif }})</a>
         <a href="{{ url('dompet?status=2') }}" type="button" class="btn btn-secondary">Tidak Aktif
@@ -51,11 +51,22 @@
                                     </svg>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                    <a class="dropdown-item" href="javascript:void(0);">{{ $wallet->nama }}</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Detail</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Ubah</a>
-
-                                    <a class="dropdown-item" href="javascript:void(0);">Tidak Aktif</a>
+                                    <u class="dropdown-item">{{ $wallet->nama }}</u>
+                                    <a href="{{ url("dompet/$wallet->id") }}" class="dropdown-item">Detail</a>
+                                    <a href="{{ url("dompet/$wallet->id/edit") }}" class="dropdown-item">Ubah</a>
+                                    <?php
+                                    if ($wallet->status_id == 1) {
+                                        $kode = 2;
+                                        $status = 'Tidak Aktif';
+                                    } else {
+                                        $kode = 1;
+                                        $status = 'Aktif';
+                                    }
+                                    ?>
+                                    <form action="{{ url("dompet/$wallet->id/$kode") }}" method="POST">
+                                        @csrf @method('PATCH')
+                                        <button type="submit" class="dropdown-item">{{ $status }}</button>
+                                    </form>
                                 </div>
                             </div>
                         </td>

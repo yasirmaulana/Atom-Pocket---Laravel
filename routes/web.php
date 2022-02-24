@@ -22,7 +22,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/dompet', [DompetController::class, 'index']);
-
+Route::get('/dompet/create', [DompetController::class, 'create']);
+Route::post('/dompet', [DompetController::class, 'store']);
+Route::get('/dompet/{id}', [DompetController::class, 'show']);
+Route::get('/dompet/{id}/edit', [DompetController::class, 'edit']);
+Route::patch('/dompet/{id}', [DompetController::class, 'update']);
+Route::patch('/dompet/{id}/{kode}', [DompetController::class, 'setstatus']);
 
 Route::get('/kategori', [KategoriController::class, 'index']);
 
