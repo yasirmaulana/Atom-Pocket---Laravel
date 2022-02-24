@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\DompetController;
+use App\Http\Controllers\DompetKeluarController;
+use App\Http\Controllers\DompetMasukController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +19,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/dompet', [DompetController::class, 'index']);
+
+Route::get('/kategori', [KategoriController::class, 'index']);
+
+Route::get('/dompetmasuk', [DompetMasukController::class, 'index']);
+
+Route::get('/dompetkeluar', [DompetKeluarController::class, 'index']);
+
+Route::get('/laporan', [LaporanController::class, 'index']);
