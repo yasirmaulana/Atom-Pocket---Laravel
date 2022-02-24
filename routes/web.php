@@ -38,6 +38,9 @@ Route::patch('/kategori/{id}', [KategoriController::class, 'update']);
 Route::patch('/kategori/{id}/{kode}', [KategoriController::class, 'setstatus']);
 
 Route::get('/dompetmasuk', [DompetMasukController::class, 'index']);
+Route::get('/dompetmasuk/create', [DompetMasukController::class, 'create']);
+Route::post('/dompetmasuk', [DompetMasukController::class, 'store']);
+
 
 Route::get('/dompetkeluar', [DompetKeluarController::class, 'index']);
 
